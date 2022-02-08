@@ -29,23 +29,22 @@ operacion=int(input("Introduce que opción deseas realizar: "))
 
 movieHeader = ['movie_id', 'title', 'genders']
 movies = pd.read_table('D:/DAM1/Programacion/practicaexamenrecuperacion/movies.dat', engine='python', sep='::', header=None, names=movieHeader, encoding='latin1')
-#movies = pd.read_table('C:/Users/javie/Downloads/movies.dat', engine='python', sep='::', header=None, names=movieHeader, encoding='latin1')
-#movies.to_csv('D:/DAM1/Programacion/practicaexamenrecuperacion/moviesfin.dat',sep=';')
+
 
 print('---------------------: \n%s' %movies)
 
 ratings=pd.read_table('D:/DAM1/Programacion/practicaexamenrecuperacion/ratings.dat', engine='python', sep='::', header=None, names=('user_id', 'movie_id', 'rating', 'timestamp'))
-#ratings.to_csv('D:/DAM1/Programacion/practicaexamenrecuperacion/datings.dat', sep=':')
+
 
 users=pd.read_table('D:/DAM1/Programacion/practicaexamenrecuperacion/users.dat', engine='python', sep='::', header=None, names=('user_id', 'gender', 'age', 'ocupation', 'zip'))
-#users.to_csv('D:/DAM1/Programacion/practicaexamenrecuperacion/users.dat', sep=':')
 
 
-#movies=pd.read_table('D:/DAM1/Programacion/practicaexamenrecuperacion/movies.dat', engine='python', sep='::', header=None, names=('movie_id', 'title', 'genders'))
+
+
 
 mergeRatingsmovies= pd.merge(movies,ratings)
 userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
-#Opcion1
+
 if operacion==1:    
     df_1 = userRatingsMoviesDF.copy()
     df_1 = df_1.pivot_table(index=['movie_id','title'],
