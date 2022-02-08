@@ -88,5 +88,5 @@ userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
     df_4.to_csv('C:/ExamenRecuperacion/Ejercicio4_JavierPerezMaeso.csv',sep=';')
     
     
-if operacion==5:
-    sys.exit()
+
+
