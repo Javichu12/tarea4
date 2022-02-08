@@ -55,18 +55,18 @@ userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
 
 
 
-    df_2 = userRatingsMoviesDF.copy()
+    dos= userRatingsMoviesDF.copy()
 
-    df_2 = df_2.pivot_table(index=['movie_id','title'],
+    dos= dos.pivot_table(index=['movie_id','title'],
                         values=['rating'],
                         aggfunc=[np.mean],                        
                         fill_value=-1,
                         margins=True)
 
 
-    df_sort=df_2.sort_values(by='title',ascending=False) 
+    dos=dos.sort_values(by='title',ascending=False) 
 
-    df_sort.to_csv('C:/ExamenRecuperacion/Ejercicio2_JavierPerezMaeso.csv',sep=';')
+    dos.to_csv('C:/ExamenRecuperacion/Ejercicio2_JavierPerezMaeso.csv',sep=';')
 
 
 
