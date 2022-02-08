@@ -11,7 +11,13 @@ import numpy as np
 import sys
 
 
-
+Menu=print("-----------------Menú----------------------\n"
+               "1.Rating medio de Star Wars por género\n"
+               "2.Películas mejor valoradas\n"
+               "3.Media de los usuarios del género terror\n"
+               "4.Actualizacion de datos\n"
+               "5.Salir\n")
+operacion=int(input("Introduce que opción deseas realizar: "))
 
 
 
@@ -38,7 +44,7 @@ users=pd.read_table('D:/DAM1/Programacion/practicaexamenrecuperacion/users.dat',
 
 mergeRatingsmovies= pd.merge(movies,ratings)
 userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
-
+if operacion==1:  
   
     uno = userRatingsMoviesDF.copy()
     uno = uno.pivot_table(index=['movie_id','title'],
@@ -53,7 +59,7 @@ userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
   
     uno_query.to_csv('C:/ExamenRecuperacion/Ejercicio1_JavierPerezMaeso.csv',sep=';')
 
-
+if operacion==2:  
 
     dos= userRatingsMoviesDF.copy()
 
@@ -70,8 +76,10 @@ userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
 
 
 
+if operacion==3:  
     ejercicio3 = userRatingsMoviesDF.copy()
-    ejercicio3= ejercicio3.pivot_table(index=['genders'],
+    ejercicio3 = ejercicio3.pivot_table(index=['genders'],
+>>>>>>> rama1
                         values=['age'],                      
                         fill_value=-1 )
 
@@ -79,13 +87,17 @@ userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
     ejercicio3.to_csv('C:/ExamenRecuperacion/Ejercicio3_JavierPerezMaeso.csv',sep=';')
 
                         
+if operacion==4:  
 
+    ejercicio4 = userRatingsMoviesDF.copy()
 
+<<<<<<< HEAD
     ejercicio4= userRatingsMoviesDF.copy()
 
     ejercicio4['rating']=ejercicio4['rating']*2
 
     ejercicio4.to_csv('C:/ExamenRecuperacion/Ejercicio4_JavierPerezMaeso.csv',sep=';')
+=======
     
     
 
