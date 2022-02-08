@@ -11,13 +11,7 @@ import numpy as np
 import sys
 
 
-Menu=print("-----------------Menú----------------------\n"
-               "1.Rating medio de Star Wars por género\n"
-               "2.Películas mejor valoradas\n"
-               "3.Media de los usuarios del género terror\n"
-               "4.Actualizacion de datos\n"
-               "5.Salir\n")
-operacion=int(input("Introduce que opción deseas realizar: "))
+
 
 
 
@@ -45,7 +39,7 @@ users=pd.read_table('D:/DAM1/Programacion/practicaexamenrecuperacion/users.dat',
 mergeRatingsmovies= pd.merge(movies,ratings)
 userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
 
-if operacion==1:    
+  
     df_1 = userRatingsMoviesDF.copy()
     df_1 = df_1.pivot_table(index=['movie_id','title'],
                         values=['rating'],
@@ -60,7 +54,7 @@ if operacion==1:
     df_query.to_csv('C:/ExamenRecuperacion/Ejercicio1_JavierPerezMaeso.csv',sep=';')
 
 
-if operacion==2:
+
     df_2 = userRatingsMoviesDF.copy()
 
     df_2 = df_2.pivot_table(index=['movie_id','title'],
@@ -75,7 +69,7 @@ if operacion==2:
     df_sort.to_csv('C:/ExamenRecuperacion/Ejercicio2_JavierPerezMaeso.csv',sep=';')
 
 
-if operacion==3:
+
     df_3 = userRatingsMoviesDF.copy()
     df_3 = df_3.pivot_table(index=['genders'],
                         values=['age'],                      
@@ -86,7 +80,6 @@ if operacion==3:
 
                         
 
-if operacion==4:
 
     df_4 = userRatingsMoviesDF.copy()
 
