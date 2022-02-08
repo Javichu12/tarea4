@@ -76,22 +76,24 @@ if operacion==2:
 
 
 if operacion==3:  
-    df_3 = userRatingsMoviesDF.copy()
-    df_3 = df_3.pivot_table(index=['genders'],
+    ejercicio3 = userRatingsMoviesDF.copy()
+    ejercicio3 = ejercicio3.pivot_table(index=['genders'],
                         values=['age'],                      
                         fill_value=-1 )
 
-    df_terror=df_3.query("genders=='Horror'")
-    df_terror.to_csv('C:/ExamenRecuperacion/Ejercicio3_JavierPerezMaeso.csv',sep=';')
+    ejercicio3=ejercicio3.query("genders=='Horror'")
+    ejercicio3.to_csv('C:/ExamenRecuperacion/Ejercicio3_JavierPerezMaeso.csv',sep=';')
 
                         
 if operacion==4:  
 
-    df_4 = userRatingsMoviesDF.copy()
+    ejercicio4 = userRatingsMoviesDF.copy()
 
-    df_4['rating']=df_4['rating']*2
+    ejercicio4['rating']=ejercicio4['rating']*2
 
-    df_4.to_csv('C:/ExamenRecuperacion/Ejercicio4_JavierPerezMaeso.csv',sep=';')
+    ejercicio4.to_csv('C:/ExamenRecuperacion/Ejercicio4_JavierPerezMaeso.csv',sep=';')
+
+    #finalizamos tarea
     
     
 
