@@ -40,18 +40,18 @@ mergeRatingsmovies= pd.merge(movies,ratings)
 userRatingsMoviesDF= pd.merge(users,mergeRatingsmovies)
 
   
-    df_1 = userRatingsMoviesDF.copy()
-    df_1 = df_1.pivot_table(index=['movie_id','title'],
+    uno = userRatingsMoviesDF.copy()
+    uno = uno.pivot_table(index=['movie_id','title'],
                         values=['rating'],
                         columns=['gender'],  
                         aggfunc=[np.mean],
                         fill_value=-1,
                         margins=True)
 
-    df_query=df_1.query("movie_id ==260 | movie_id ==1196 | movie_id ==1210 | movie_id ==2628")
+    uno_query=uno.query("movie_id ==260 | movie_id ==1196 | movie_id ==1210 | movie_id ==2628")
 
   
-    df_query.to_csv('C:/ExamenRecuperacion/Ejercicio1_JavierPerezMaeso.csv',sep=';')
+    uno_query.to_csv('C:/ExamenRecuperacion/Ejercicio1_JavierPerezMaeso.csv',sep=';')
 
 
 
